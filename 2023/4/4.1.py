@@ -11,9 +11,7 @@ def solve():
       line = read_string()
       numbers = line.split(':')[1]
       winning, mine = numbers.split('|')
-      win_set = set()
-      for num in winning.split():
-        win_set.add(num)
+      win_set = set(winning)
       val = 0
       for num in mine.split():
         if num in win_set:

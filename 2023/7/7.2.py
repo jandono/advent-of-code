@@ -12,7 +12,7 @@ def read_file(path: str):
 
 def process(hand: str) -> str:
   hand = hand.replace('T', chr(ord('9') + 1))
-  hand = hand.replace('J', '1')
+  hand = hand.replace('J', '1')  # threat Jokers as the weekest card for comparisons
   hand = hand.replace('Q', chr(ord('9') + 3))
   hand = hand.replace('K', chr(ord('9') + 4))
   hand = hand.replace('A', chr(ord('9') + 5))
@@ -20,6 +20,7 @@ def process(hand: str) -> str:
 
 def strength(hand: str):
   cnt = Counter(hand)
+  # We want to add the amount of Jokers to the largest group
   if '1' in cnt:
     maxi, maxk = 0, '0'
     for k in cnt:

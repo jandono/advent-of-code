@@ -36,7 +36,7 @@ def process_range(ranges: list[tuple[int, int]], mappings: list[str]) -> list[tu
       if after[1] > after[0]:
         new_ranges.append(after)
       print(f'Answer: {ans}, new_ranges: {new_ranges}')
-      print('___________________________________________________________________________________________')
+      print('_______________________________________________________________')
     ranges = new_ranges
   return ans + ranges
 

@@ -16,9 +16,7 @@ def solve():
       s += num_copies[i] + 1
       numbers = line.split(':')[1]
       winning, mine = numbers.split('|')
-      win_set = set()
-      for num in winning.split():
-        win_set.add(num)
+      win_set = set(winning)
       
       matches = 0
       for num in mine.split():
