@@ -38,7 +38,6 @@ def solve():
 
   iterations = []
   for start in start_locations:
-    
     dp = compute_dp(start, turns, mappings)
     for loc in end_locations:
       if loc in dp:
@@ -50,11 +49,9 @@ def solve():
         # take the result from dp[loc][0].
         iterations.append(dp[loc][0])
 
-  # The solution to the problem is the least Common Multiple of these numbers.
-  lcm = 1
-  for iteration in iterations:
-    lcm = lcm * iteration // math.gcd(lcm, iteration)
-  print(lcm)
+  # Finally the solution to the problem is the least Common Multiple of the
+  # steps needed to reach an end location from every start location.
+  print(math.lcm(*iterations))
 
 
 if __name__ == '__main__':
