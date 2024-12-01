@@ -6,7 +6,6 @@ def read_file(path: str):
   with open(path, 'r') as f:
     content = f.read()
     return content
-def swap(x, y): return y, x
 
 def solve():
   while True:
