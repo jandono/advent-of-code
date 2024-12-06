@@ -48,13 +48,8 @@ def solve_line(line: str) -> int:
   return sol
 
 def solve():
-  lines = []
-  while True:
-    try:
-      lines.append(read_string())
-    except Exception:
-      break
-  print(solve_line(''.join(lines)))
+  f = read_file('/home/ac1d/coding/advent-of-code/2024/3/3.in')
+  print(solve_line(f))
 
 if __name__ == '__main__':
   solve()
