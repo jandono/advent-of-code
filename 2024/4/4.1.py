@@ -9,7 +9,7 @@ def read_file(path: str):
     content = f.read()
     return content
 
-def count(s):
+def count(s: str):
   sol, i = 0, 0
   while True:
     i = s.find('XMAS', i)

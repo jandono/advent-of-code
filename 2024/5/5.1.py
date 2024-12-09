@@ -9,6 +9,7 @@ def read_file(path: str):
     content = f.read()
     return content
 
+
 def build_graph(orderings: list[str]):
   in_edges = defaultdict(set)
   for ordering in orderings:
@@ -17,7 +18,7 @@ def build_graph(orderings: list[str]):
   return in_edges
 
 
-def solve_line(nums: list[int], in_edges):
+def solve_line(nums: list[int], in_edges: dict[int, set[int]]):
   for i, num in enumerate(nums):
     for j in range(i+1, len(nums)):
       if nums[j] in in_edges[num]:

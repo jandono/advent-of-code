@@ -20,7 +20,11 @@ def build_graph(orderings: list[str]):
   return in_edges, out_edges
 
 
-def topological_sort(nums: list[int], in_edges, out_edges):
+def topological_sort(
+    nums: list[int],
+    in_edges: dict[int, set[int]],
+    out_edges: dict[int, set[int]],
+):
   cnt_in_edges = {v: len(in_edges[v] & set(nums)) for v in nums}
   result = []
   q = deque()
@@ -40,7 +44,11 @@ def topological_sort(nums: list[int], in_edges, out_edges):
   return result[len(result)//2]
 
 
-def solve_line(nums: list[int], in_edges, out_edges):
+def solve_line(
+    nums: list[int],
+    in_edges: dict[int, set[int]],
+    out_edges: dict[int, set[int]],
+):
   for i, num in enumerate(nums):
     for j in range(i+1, len(nums)):
       if nums[j] in in_edges[num]:

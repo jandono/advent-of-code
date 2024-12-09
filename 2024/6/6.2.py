@@ -10,7 +10,7 @@ def read_file(path: str):
 directions = [(-1, 0), (0, 1), (1, 0), (0, -1)] 
 
 
-def solve_maze(i, j, maze):
+def solve_maze(i: int, j: int, maze: list[list[str]]):
   n, m = len(maze), len(maze[0])
   positions = set()
   positions.add((i, j))
