@@ -9,12 +9,13 @@ def read_file(path: str):
 
 directions = [(-1, 0), (0, 1), (1, 0), (0, -1)] 
 
+
 def solve_maze(i, j, maze):
   n, m = len(maze), len(maze[0])
   positions = set()
   positions.add((i, j))
   dir_idx = 0
-  for _ in range(130*130):
+  for _ in range(n*m):
     ii = i + directions[dir_idx % 4][0]
     if not 0 <= ii < n:
       return 0
@@ -25,10 +26,10 @@ def solve_maze(i, j, maze):
     if maze[ii][jj] == '#':
       dir_idx += 1
     else:
-      i = ii
-      j = jj
+      i, j = ii, jj
       positions.add((i, j))
   return 1
+
 
 def solve():
   maze = []
@@ -43,7 +44,7 @@ def solve():
       i += 1
     except Exception:
       break
-  
+
   sol = 0
   for i in range(len(maze)):
     for j in range(len(maze[0])):
@@ -52,6 +53,7 @@ def solve():
         sol += solve_maze(start_i, start_j, maze)
         maze[i][j] = '.'
   print(sol)
+
 
 if __name__ == '__main__':
   solve()
