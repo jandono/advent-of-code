@@ -8,7 +8,7 @@ def read_file(path: str):
     return content
 
 
-def eval_expr(x, op, y):
+def eval_expr(x: int, op: str, y: int):
   if op == '+':
     return int(x) + int(y)
   elif op == '*':
@@ -17,7 +17,7 @@ def eval_expr(x, op, y):
     return int(str(x) + str(y))
 
 
-def eval_helper(curr, i, nums, target):
+def eval_helper(curr: int, i: int, nums: list[int], target: int):
   if curr > target:
     return False
 
