@@ -7,14 +7,15 @@ def read_file(path: str):
     content = f.read()
     return content
 
+
 def eval_expr(x, op, y):
   if op == '+':
     return int(x) + int(y)
   elif op == '*':
     return int(x) * int(y)
   else:
-    sol = int(str(x) + str(y))
-  return sol
+    return int(str(x) + str(y))
+
 
 def eval_helper(curr, i, nums, target):
   if curr > target:
@@ -28,10 +29,12 @@ def eval_helper(curr, i, nums, target):
     flag = flag or eval_helper(eval_expr(curr, op, nums[i]), i+1, nums, target)
   return flag
 
+
 def evaluate(target: int, nums: list[int]) -> int:
   if eval_helper(nums[0], 1, nums, target):
     return target
   return 0
+
 
 def solve():
   sol = 0
