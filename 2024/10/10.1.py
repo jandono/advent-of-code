@@ -19,7 +19,6 @@ def trail_heads(x: int, y: int, maze: list[list[str]]) -> int:
   q = deque()
   q.append((x, y, int(maze[x][y])))
   while q:
-    # print(q)
     i, j, val = q.popleft()
     if val == 9:
       sol += 1
