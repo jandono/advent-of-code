@@ -1,5 +1,3 @@
-from collections import defaultdict
-
 def read_int(): return int(input().strip())
 def read_ints(): return list(map(int, input().strip().split()))
 def read_string(): return input()
