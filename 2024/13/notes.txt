@@ -1,0 +1,8 @@
+dx_a * i + dx_b * j = x
+dy_a * i + dy_b * j = y
+
+dx_a dx_b   i      x
+dy_a dy_b   j      y
+
+x    
+y
